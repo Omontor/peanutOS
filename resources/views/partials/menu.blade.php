@@ -128,7 +128,7 @@
                     </li>
                 @endcan
                 @can('document_manager_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/contracts*") ? "menu-open" : "" }} {{ request()->is("admin/static-clauses*") ? "menu-open" : "" }} {{ request()->is("admin/dynamic-clauses*") ? "menu-open" : "" }}">
+                    <li class="nav-item has-treeview {{ request()->is("admin/static-clauses*") ? "menu-open" : "" }} {{ request()->is("admin/dynamic-clauses*") ? "menu-open" : "" }} {{ request()->is("admin/contracts*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon far fa-file-alt">
 
@@ -139,18 +139,6 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            @can('contract_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.contracts.index") }}" class="nav-link {{ request()->is("admin/contracts") || request()->is("admin/contracts/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-file-contract">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.contract.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
                             @can('static_clause_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.static-clauses.index") }}" class="nav-link {{ request()->is("admin/static-clauses") || request()->is("admin/static-clauses/*") ? "active" : "" }}">
@@ -171,6 +159,18 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.dynamicClause.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('contract_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.contracts.index") }}" class="nav-link {{ request()->is("admin/contracts") || request()->is("admin/contracts/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-file-contract">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.contract.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -218,7 +218,7 @@
                     </li>
                 @endcan
                 @can('rental_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/rents*") ? "menu-open" : "" }} {{ request()->is("admin/quotations*") ? "menu-open" : "" }} {{ request()->is("admin/rental-clauses*") ? "menu-open" : "" }} {{ request()->is("admin/approvals*") ? "menu-open" : "" }}">
+                    <li class="nav-item has-treeview {{ request()->is("admin/rental-clauses*") ? "menu-open" : "" }} {{ request()->is("admin/quotations*") ? "menu-open" : "" }} {{ request()->is("admin/rents*") ? "menu-open" : "" }} {{ request()->is("admin/approvals*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon fas fa-money-bill-alt">
 
@@ -229,14 +229,14 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            @can('rent_access')
+                            @can('rental_clause_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.rents.index") }}" class="nav-link {{ request()->is("admin/rents") || request()->is("admin/rents/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-align-justify">
+                                    <a href="{{ route("admin.rental-clauses.index") }}" class="nav-link {{ request()->is("admin/rental-clauses") || request()->is("admin/rental-clauses/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-file-contract">
 
                                         </i>
                                         <p>
-                                            {{ trans('cruds.rent.title') }}
+                                            {{ trans('cruds.rentalClause.title') }}
                                         </p>
                                     </a>
                                 </li>
@@ -253,14 +253,14 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('rental_clause_access')
+                            @can('rent_access')
                                 <li class="nav-item">
-                                    <a href="{{ route("admin.rental-clauses.index") }}" class="nav-link {{ request()->is("admin/rental-clauses") || request()->is("admin/rental-clauses/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-file-contract">
+                                    <a href="{{ route("admin.rents.index") }}" class="nav-link {{ request()->is("admin/rents") || request()->is("admin/rents/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-align-justify">
 
                                         </i>
                                         <p>
-                                            {{ trans('cruds.rentalClause.title') }}
+                                            {{ trans('cruds.rent.title') }}
                                         </p>
                                     </a>
                                 </li>
