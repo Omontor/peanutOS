@@ -65,6 +65,8 @@ return [
             'deleted_at_helper'        => ' ',
             'team'                     => 'Team',
             'team_helper'              => ' ',
+            'approved'                 => 'Approved',
+            'approved_helper'          => ' ',
         ],
     ],
     'auditLog' => [

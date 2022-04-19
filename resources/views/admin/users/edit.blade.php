@@ -27,6 +27,17 @@
                 <span class="help-block">{{ trans('cruds.user.fields.email_helper') }}</span>
             </div>
             <div class="form-group">
+                <div class="form-check {{ $errors->has('approved') ? 'is-invalid' : '' }}">
+                    <input type="hidden" name="approved" value="0">
+                    <input class="form-check-input" type="checkbox" name="approved" id="approved" value="1" {{ $user->approved || old('approved', 0) === 1 ? 'checked' : '' }}>
+                    <label class="form-check-label" for="approved">{{ trans('cruds.user.fields.approved') }}</label>
+                </div>
+                @if($errors->has('approved'))
+                    <span class="text-danger">{{ $errors->first('approved') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.user.fields.approved_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="password">{{ trans('cruds.user.fields.password') }}</label>
                 <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password">
                 @if($errors->has('password'))
@@ -41,8 +52,8 @@
                     <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
                 </div>
                 <select class="form-control select2 {{ $errors->has('roles') ? 'is-invalid' : '' }}" name="roles[]" id="roles" multiple required>
-                    @foreach($roles as $id => $roles)
-                        <option value="{{ $id }}" {{ (in_array($id, old('roles', [])) || $user->roles->contains($id)) ? 'selected' : '' }}>{{ $roles }}</option>
+                    @foreach($roles as $id => $role)
+                        <option value="{{ $id }}" {{ (in_array($id, old('roles', [])) || $user->roles->contains($id)) ? 'selected' : '' }}>{{ $role }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('roles'))

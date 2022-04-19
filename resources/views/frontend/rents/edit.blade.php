@@ -1,0 +1,227 @@
+@extends('layouts.frontend')
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+
+            <div class="card">
+                <div class="card-header">
+                    {{ trans('global.edit') }} {{ trans('cruds.rent.title_singular') }}
+                </div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route("frontend.rents.update", [$rent->id]) }}" enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
+                        <div class="form-group">
+                            <label class="required" for="client_id">{{ trans('cruds.rent.fields.client') }}</label>
+                            <select class="form-control select2" name="client_id" id="client_id" required>
+                                @foreach($clients as $id => $entry)
+                                    <option value="{{ $id }}" {{ (old('client_id') ? old('client_id') : $rent->client->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('client'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('client') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.rent.fields.client_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="assets">{{ trans('cruds.rent.fields.asset') }}</label>
+                            <div style="padding-bottom: 4px">
+                                <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
+                                <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
+                            </div>
+                            <select class="form-control select2" name="assets[]" id="assets" multiple>
+                                @foreach($assets as $id => $asset)
+                                    <option value="{{ $id }}" {{ (in_array($id, old('assets', [])) || $rent->assets->contains($id)) ? 'selected' : '' }}>{{ $asset }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('assets'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('assets') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.rent.fields.asset_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="quotation_id">{{ trans('cruds.rent.fields.quotation') }}</label>
+                            <select class="form-control select2" name="quotation_id" id="quotation_id">
+                                @foreach($quotations as $id => $entry)
+                                    <option value="{{ $id }}" {{ (old('quotation_id') ? old('quotation_id') : $rent->quotation->id ?? '') == $id ? 'selected' : '' }}>{{ $entry }}</option>
+                                @endforeach
+                            </select>
+                            @if($errors->has('quotation'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('quotation') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.rent.fields.quotation_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="identification">{{ trans('cruds.rent.fields.identification') }}</label>
+                            <div class="needsclick dropzone" id="identification-dropzone">
+                            </div>
+                            @if($errors->has('identification'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('identification') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.rent.fields.identification_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="address_proof">{{ trans('cruds.rent.fields.address_proof') }}</label>
+                            <div class="needsclick dropzone" id="address_proof-dropzone">
+                            </div>
+                            @if($errors->has('address_proof'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('address_proof') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.rent.fields.address_proof_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="from">{{ trans('cruds.rent.fields.from') }}</label>
+                            <input class="form-control datetime" type="text" name="from" id="from" value="{{ old('from', $rent->from) }}" required>
+                            @if($errors->has('from'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('from') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.rent.fields.from_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <label class="required" for="to">{{ trans('cruds.rent.fields.to') }}</label>
+                            <input class="form-control datetime" type="text" name="to" id="to" value="{{ old('to', $rent->to) }}" required>
+                            @if($errors->has('to'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('to') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.rent.fields.to_helper') }}</span>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-danger" type="submit">
+                                {{ trans('global.save') }}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+<script>
+    Dropzone.options.identificationDropzone = {
+    url: '{{ route('frontend.rents.storeMedia') }}',
+    maxFilesize: 4, // MB
+    acceptedFiles: '.jpeg,.jpg,.png,.gif',
+    maxFiles: 1,
+    addRemoveLinks: true,
+    headers: {
+      'X-CSRF-TOKEN': "{{ csrf_token() }}"
+    },
+    params: {
+      size: 4,
+      width: 4096,
+      height: 4096
+    },
+    success: function (file, response) {
+      $('form').find('input[name="identification"]').remove()
+      $('form').append('<input type="hidden" name="identification" value="' + response.name + '">')
+    },
+    removedfile: function (file) {
+      file.previewElement.remove()
+      if (file.status !== 'error') {
+        $('form').find('input[name="identification"]').remove()
+        this.options.maxFiles = this.options.maxFiles + 1
+      }
+    },
+    init: function () {
+@if(isset($rent) && $rent->identification)
+      var file = {!! json_encode($rent->identification) !!}
+          this.options.addedfile.call(this, file)
+      this.options.thumbnail.call(this, file, file.preview)
+      file.previewElement.classList.add('dz-complete')
+      $('form').append('<input type="hidden" name="identification" value="' + file.file_name + '">')
+      this.options.maxFiles = this.options.maxFiles - 1
+@endif
+    },
+    error: function (file, response) {
+        if ($.type(response) === 'string') {
+            var message = response //dropzone sends it's own error messages in string
+        } else {
+            var message = response.errors.file
+        }
+        file.previewElement.classList.add('dz-error')
+        _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+        _results = []
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            node = _ref[_i]
+            _results.push(node.textContent = message)
+        }
+
+        return _results
+    }
+}
+</script>
+<script>
+    Dropzone.options.addressProofDropzone = {
+    url: '{{ route('frontend.rents.storeMedia') }}',
+    maxFilesize: 4, // MB
+    acceptedFiles: '.jpeg,.jpg,.png,.gif',
+    maxFiles: 1,
+    addRemoveLinks: true,
+    headers: {
+      'X-CSRF-TOKEN': "{{ csrf_token() }}"
+    },
+    params: {
+      size: 4,
+      width: 4096,
+      height: 4096
+    },
+    success: function (file, response) {
+      $('form').find('input[name="address_proof"]').remove()
+      $('form').append('<input type="hidden" name="address_proof" value="' + response.name + '">')
+    },
+    removedfile: function (file) {
+      file.previewElement.remove()
+      if (file.status !== 'error') {
+        $('form').find('input[name="address_proof"]').remove()
+        this.options.maxFiles = this.options.maxFiles + 1
+      }
+    },
+    init: function () {
+@if(isset($rent) && $rent->address_proof)
+      var file = {!! json_encode($rent->address_proof) !!}
+          this.options.addedfile.call(this, file)
+      this.options.thumbnail.call(this, file, file.preview)
+      file.previewElement.classList.add('dz-complete')
+      $('form').append('<input type="hidden" name="address_proof" value="' + file.file_name + '">')
+      this.options.maxFiles = this.options.maxFiles - 1
+@endif
+    },
+    error: function (file, response) {
+        if ($.type(response) === 'string') {
+            var message = response //dropzone sends it's own error messages in string
+        } else {
+            var message = response.errors.file
+        }
+        file.previewElement.classList.add('dz-error')
+        _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+        _results = []
+        for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+            node = _ref[_i]
+            _results.push(node.textContent = message)
+        }
+
+        return _results
+    }
+}
+</script>
+@endsection

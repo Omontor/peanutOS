@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use \DateTimeInterface;
+use App\Notifications\VerifyUserNotification;
 use App\Traits\Auditable;
 use Carbon\Carbon;
 use Hash;
@@ -12,6 +13,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -38,6 +40,7 @@ class User extends Authenticatable
         'name',
         'email',
         'email_verified_at',
+        'approved',
         'password',
         'remember_token',
         'created_at',
@@ -45,6 +48,17 @@ class User extends Authenticatable
         'deleted_at',
         'team_id',
     ];
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        self::created(function (User $user) {
+            $registrationRole = config('panel.registration_default_role');
+            if (!$user->roles()->get()->contains($registrationRole)) {
+                $user->roles()->attach($registrationRole);
+            }
+        });
+    }
 
     public function getIsAdminAttribute()
     {
