@@ -27,8 +27,8 @@ class LessonsApiController extends Controller
     {
         $lesson = Lesson::create($request->all());
 
-        if ($request->input('thumbnail', false)) {
-            $lesson->addMedia(storage_path('tmp/uploads/' . basename($request->input('thumbnail'))))->toMediaCollection('thumbnail');
+        foreach ($request->input('thumbnail', []) as $file) {
+            $lesson->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('thumbnail');
         }
 
         if ($request->input('video', false)) {
@@ -51,15 +51,18 @@ class LessonsApiController extends Controller
     {
         $lesson->update($request->all());
 
-        if ($request->input('thumbnail', false)) {
-            if (!$lesson->thumbnail || $request->input('thumbnail') !== $lesson->thumbnail->file_name) {
-                if ($lesson->thumbnail) {
-                    $lesson->thumbnail->delete();
+        if (count($lesson->thumbnail) > 0) {
+            foreach ($lesson->thumbnail as $media) {
+                if (!in_array($media->file_name, $request->input('thumbnail', []))) {
+                    $media->delete();
                 }
-                $lesson->addMedia(storage_path('tmp/uploads/' . basename($request->input('thumbnail'))))->toMediaCollection('thumbnail');
             }
-        } elseif ($lesson->thumbnail) {
-            $lesson->thumbnail->delete();
+        }
+        $media = $lesson->thumbnail->pluck('file_name')->toArray();
+        foreach ($request->input('thumbnail', []) as $file) {
+            if (count($media) === 0 || !in_array($file, $media)) {
+                $lesson->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('thumbnail');
+            }
         }
 
         if ($request->input('video', false)) {

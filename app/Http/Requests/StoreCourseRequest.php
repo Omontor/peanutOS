@@ -28,6 +28,9 @@ class StoreCourseRequest extends FormRequest
             'description' => [
                 'required',
             ],
+            'thumbnail' => [
+                'array',
+            ],
             'students.*' => [
                 'integer',
             ],

@@ -27,8 +27,8 @@ class CoursesApiController extends Controller
     {
         $course = Course::create($request->all());
         $course->students()->sync($request->input('students', []));
-        if ($request->input('thumbnail', false)) {
-            $course->addMedia(storage_path('tmp/uploads/' . basename($request->input('thumbnail'))))->toMediaCollection('thumbnail');
+        foreach ($request->input('thumbnail', []) as $file) {
+            $course->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('thumbnail');
         }
 
         return (new CourseResource($course))
@@ -47,15 +47,18 @@ class CoursesApiController extends Controller
     {
         $course->update($request->all());
         $course->students()->sync($request->input('students', []));
-        if ($request->input('thumbnail', false)) {
-            if (!$course->thumbnail || $request->input('thumbnail') !== $course->thumbnail->file_name) {
-                if ($course->thumbnail) {
-                    $course->thumbnail->delete();
+        if (count($course->thumbnail) > 0) {
+            foreach ($course->thumbnail as $media) {
+                if (!in_array($media->file_name, $request->input('thumbnail', []))) {
+                    $media->delete();
                 }
-                $course->addMedia(storage_path('tmp/uploads/' . basename($request->input('thumbnail'))))->toMediaCollection('thumbnail');
             }
-        } elseif ($course->thumbnail) {
-            $course->thumbnail->delete();
+        }
+        $media = $course->thumbnail->pluck('file_name')->toArray();
+        foreach ($request->input('thumbnail', []) as $file) {
+            if (count($media) === 0 || !in_array($file, $media)) {
+                $course->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('thumbnail');
+            }
         }
 
         return (new CourseResource($course))

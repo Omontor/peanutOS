@@ -39,7 +39,7 @@
                                         {{ trans('cruds.approval.fields.quotation') }}
                                     </th>
                                     <td>
-                                        {{ $approval->quotation->total ?? '' }}
+                                        {{ $approval->quotation->title ?? '' }}
                                     </td>
                                 </tr>
                                 <tr>

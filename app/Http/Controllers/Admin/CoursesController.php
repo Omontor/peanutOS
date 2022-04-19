@@ -31,11 +31,11 @@ class CoursesController extends Controller
     {
         abort_if(Gate::denies('course_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $teachers = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $teachers = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $students = User::all()->pluck('name', 'id');
+        $students = User::pluck('name', 'id');
 
-        return view('admin.courses.create', compact('teachers', 'students'));
+        return view('admin.courses.create', compact('students', 'teachers'));
     }
 
     public function store(StoreCourseRequest $request)
@@ -57,13 +57,13 @@ class CoursesController extends Controller
     {
         abort_if(Gate::denies('course_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $teachers = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $teachers = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $students = User::all()->pluck('name', 'id');
+        $students = User::pluck('name', 'id');
 
         $course->load('teacher', 'students');
 
-        return view('admin.courses.edit', compact('teachers', 'students', 'course'));
+        return view('admin.courses.edit', compact('course', 'students', 'teachers'));
     }
 
     public function update(UpdateCourseRequest $request, Course $course)

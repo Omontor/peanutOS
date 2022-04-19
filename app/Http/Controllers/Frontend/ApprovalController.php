@@ -38,7 +38,7 @@ class ApprovalController extends Controller
 
         $clients = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $quotations = Quotation::pluck('total', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $quotations = Quotation::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('frontend.approvals.create', compact('clients', 'quotations'));
     }
@@ -64,7 +64,7 @@ class ApprovalController extends Controller
 
         $clients = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $quotations = Quotation::pluck('total', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $quotations = Quotation::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $approval->load('client', 'quotation');
 

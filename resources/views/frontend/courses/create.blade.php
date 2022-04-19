@@ -48,16 +48,6 @@
                             <span class="help-block">{{ trans('cruds.course.fields.description_helper') }}</span>
                         </div>
                         <div class="form-group">
-                            <label for="price">{{ trans('cruds.course.fields.price') }}</label>
-                            <input class="form-control" type="number" name="price" id="price" value="{{ old('price', '') }}" step="0.01">
-                            @if($errors->has('price'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('price') }}
-                                </div>
-                            @endif
-                            <span class="help-block">{{ trans('cruds.course.fields.price_helper') }}</span>
-                        </div>
-                        <div class="form-group">
                             <label for="thumbnail">{{ trans('cruds.course.fields.thumbnail') }}</label>
                             <div class="needsclick dropzone" id="thumbnail-dropzone">
                             </div>

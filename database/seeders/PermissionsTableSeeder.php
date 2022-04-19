@@ -268,742 +268,598 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 65,
-                'title' => 'project_management_access',
-            ],
-            [
-                'id'    => 66,
                 'title' => 'asset_management_access',
             ],
             [
-                'id'    => 67,
+                'id'    => 66,
                 'title' => 'event_management_access',
             ],
             [
-                'id'    => 68,
+                'id'    => 67,
                 'title' => 'agency_management_access',
             ],
             [
-                'id'    => 69,
+                'id'    => 68,
                 'title' => 'document_manager_access',
             ],
             [
-                'id'    => 70,
+                'id'    => 69,
                 'title' => 'client_create',
             ],
             [
-                'id'    => 71,
+                'id'    => 70,
                 'title' => 'client_edit',
             ],
             [
-                'id'    => 72,
+                'id'    => 71,
                 'title' => 'client_show',
             ],
             [
-                'id'    => 73,
+                'id'    => 72,
                 'title' => 'client_delete',
             ],
             [
-                'id'    => 74,
+                'id'    => 73,
                 'title' => 'client_access',
             ],
             [
-                'id'    => 75,
+                'id'    => 74,
                 'title' => 'product_create',
             ],
             [
-                'id'    => 76,
+                'id'    => 75,
                 'title' => 'product_edit',
             ],
             [
-                'id'    => 77,
+                'id'    => 76,
                 'title' => 'product_show',
             ],
             [
-                'id'    => 78,
+                'id'    => 77,
                 'title' => 'product_delete',
             ],
             [
-                'id'    => 79,
+                'id'    => 78,
                 'title' => 'product_access',
             ],
             [
-                'id'    => 80,
+                'id'    => 79,
                 'title' => 'project_create',
             ],
             [
-                'id'    => 81,
+                'id'    => 80,
                 'title' => 'project_edit',
             ],
             [
-                'id'    => 82,
+                'id'    => 81,
                 'title' => 'project_show',
             ],
             [
-                'id'    => 83,
+                'id'    => 82,
                 'title' => 'project_delete',
             ],
             [
-                'id'    => 84,
+                'id'    => 83,
                 'title' => 'project_access',
             ],
             [
-                'id'    => 85,
+                'id'    => 84,
                 'title' => 'basic_data_create',
             ],
             [
-                'id'    => 86,
+                'id'    => 85,
                 'title' => 'basic_data_edit',
             ],
             [
-                'id'    => 87,
+                'id'    => 86,
                 'title' => 'basic_data_show',
             ],
             [
-                'id'    => 88,
+                'id'    => 87,
                 'title' => 'basic_data_delete',
             ],
             [
-                'id'    => 89,
+                'id'    => 88,
                 'title' => 'basic_data_access',
             ],
             [
-                'id'    => 90,
+                'id'    => 89,
                 'title' => 'contract_create',
             ],
             [
-                'id'    => 91,
+                'id'    => 90,
                 'title' => 'contract_edit',
             ],
             [
-                'id'    => 92,
+                'id'    => 91,
                 'title' => 'contract_show',
             ],
             [
-                'id'    => 93,
+                'id'    => 92,
                 'title' => 'contract_delete',
             ],
             [
-                'id'    => 94,
+                'id'    => 93,
                 'title' => 'contract_access',
             ],
             [
-                'id'    => 95,
+                'id'    => 94,
                 'title' => 'static_clause_create',
             ],
             [
-                'id'    => 96,
+                'id'    => 95,
                 'title' => 'static_clause_edit',
             ],
             [
-                'id'    => 97,
+                'id'    => 96,
                 'title' => 'static_clause_show',
             ],
             [
-                'id'    => 98,
+                'id'    => 97,
                 'title' => 'static_clause_delete',
             ],
             [
-                'id'    => 99,
+                'id'    => 98,
                 'title' => 'static_clause_access',
             ],
             [
-                'id'    => 100,
+                'id'    => 99,
                 'title' => 'dynamic_clause_create',
             ],
             [
-                'id'    => 101,
+                'id'    => 100,
                 'title' => 'dynamic_clause_edit',
             ],
             [
-                'id'    => 102,
+                'id'    => 101,
                 'title' => 'dynamic_clause_show',
             ],
             [
-                'id'    => 103,
+                'id'    => 102,
                 'title' => 'dynamic_clause_delete',
             ],
             [
-                'id'    => 104,
+                'id'    => 103,
                 'title' => 'dynamic_clause_access',
             ],
             [
-                'id'    => 105,
+                'id'    => 104,
                 'title' => 'category_create',
             ],
             [
-                'id'    => 106,
+                'id'    => 105,
                 'title' => 'category_edit',
             ],
             [
-                'id'    => 107,
+                'id'    => 106,
                 'title' => 'category_show',
             ],
             [
-                'id'    => 108,
+                'id'    => 107,
                 'title' => 'category_delete',
             ],
             [
-                'id'    => 109,
+                'id'    => 108,
                 'title' => 'category_access',
             ],
             [
-                'id'    => 110,
+                'id'    => 109,
                 'title' => 'asset_create',
             ],
             [
-                'id'    => 111,
+                'id'    => 110,
                 'title' => 'asset_edit',
             ],
             [
-                'id'    => 112,
+                'id'    => 111,
                 'title' => 'asset_show',
             ],
             [
-                'id'    => 113,
+                'id'    => 112,
                 'title' => 'asset_delete',
             ],
             [
-                'id'    => 114,
+                'id'    => 113,
                 'title' => 'asset_access',
             ],
             [
-                'id'    => 115,
+                'id'    => 114,
                 'title' => 'rental_access',
             ],
             [
-                'id'    => 116,
+                'id'    => 115,
                 'title' => 'rent_create',
             ],
             [
-                'id'    => 117,
+                'id'    => 116,
                 'title' => 'rent_edit',
             ],
             [
-                'id'    => 118,
+                'id'    => 117,
                 'title' => 'rent_show',
             ],
             [
-                'id'    => 119,
+                'id'    => 118,
                 'title' => 'rent_delete',
             ],
             [
-                'id'    => 120,
+                'id'    => 119,
                 'title' => 'rent_access',
             ],
             [
-                'id'    => 121,
+                'id'    => 120,
                 'title' => 'quotation_create',
             ],
             [
-                'id'    => 122,
+                'id'    => 121,
                 'title' => 'quotation_edit',
             ],
             [
-                'id'    => 123,
+                'id'    => 122,
                 'title' => 'quotation_show',
             ],
             [
-                'id'    => 124,
+                'id'    => 123,
                 'title' => 'quotation_delete',
             ],
             [
-                'id'    => 125,
+                'id'    => 124,
                 'title' => 'quotation_access',
             ],
             [
-                'id'    => 126,
+                'id'    => 125,
                 'title' => 'rental_clause_create',
             ],
             [
-                'id'    => 127,
+                'id'    => 126,
                 'title' => 'rental_clause_edit',
             ],
             [
-                'id'    => 128,
+                'id'    => 127,
                 'title' => 'rental_clause_show',
             ],
             [
-                'id'    => 129,
+                'id'    => 128,
                 'title' => 'rental_clause_delete',
             ],
             [
-                'id'    => 130,
+                'id'    => 129,
                 'title' => 'rental_clause_access',
             ],
             [
-                'id'    => 131,
+                'id'    => 130,
                 'title' => 'approval_create',
             ],
             [
-                'id'    => 132,
+                'id'    => 131,
                 'title' => 'approval_edit',
             ],
             [
-                'id'    => 133,
+                'id'    => 132,
                 'title' => 'approval_show',
             ],
             [
-                'id'    => 134,
+                'id'    => 133,
                 'title' => 'approval_delete',
             ],
             [
-                'id'    => 135,
+                'id'    => 134,
                 'title' => 'approval_access',
             ],
             [
-                'id'    => 136,
+                'id'    => 135,
                 'title' => 'event_create',
             ],
             [
-                'id'    => 137,
+                'id'    => 136,
                 'title' => 'event_edit',
             ],
             [
-                'id'    => 138,
+                'id'    => 137,
                 'title' => 'event_show',
             ],
             [
-                'id'    => 139,
+                'id'    => 138,
                 'title' => 'event_delete',
             ],
             [
-                'id'    => 140,
+                'id'    => 139,
                 'title' => 'event_access',
             ],
             [
-                'id'    => 141,
+                'id'    => 140,
                 'title' => 'event_day_create',
             ],
             [
-                'id'    => 142,
+                'id'    => 141,
                 'title' => 'event_day_edit',
             ],
             [
-                'id'    => 143,
+                'id'    => 142,
                 'title' => 'event_day_show',
             ],
             [
-                'id'    => 144,
+                'id'    => 143,
                 'title' => 'event_day_delete',
             ],
             [
-                'id'    => 145,
+                'id'    => 144,
                 'title' => 'event_day_access',
             ],
             [
-                'id'    => 146,
+                'id'    => 145,
                 'title' => 'venue_create',
             ],
             [
-                'id'    => 147,
+                'id'    => 146,
                 'title' => 'venue_edit',
             ],
             [
-                'id'    => 148,
+                'id'    => 147,
                 'title' => 'venue_show',
             ],
             [
-                'id'    => 149,
+                'id'    => 148,
                 'title' => 'venue_delete',
             ],
             [
-                'id'    => 150,
+                'id'    => 149,
                 'title' => 'venue_access',
             ],
             [
-                'id'    => 151,
+                'id'    => 150,
                 'title' => 'event_witness_create',
             ],
             [
-                'id'    => 152,
+                'id'    => 151,
                 'title' => 'event_witness_edit',
             ],
             [
-                'id'    => 153,
+                'id'    => 152,
                 'title' => 'event_witness_show',
             ],
             [
-                'id'    => 154,
+                'id'    => 153,
                 'title' => 'event_witness_delete',
             ],
             [
-                'id'    => 155,
+                'id'    => 154,
                 'title' => 'event_witness_access',
             ],
             [
-                'id'    => 156,
+                'id'    => 155,
                 'title' => 'witness_category_create',
             ],
             [
-                'id'    => 157,
+                'id'    => 156,
                 'title' => 'witness_category_edit',
             ],
             [
-                'id'    => 158,
+                'id'    => 157,
                 'title' => 'witness_category_show',
             ],
             [
-                'id'    => 159,
+                'id'    => 158,
                 'title' => 'witness_category_delete',
             ],
             [
-                'id'    => 160,
+                'id'    => 159,
                 'title' => 'witness_category_access',
             ],
             [
-                'id'    => 161,
-                'title' => 'management_create',
-            ],
-            [
-                'id'    => 162,
-                'title' => 'management_edit',
-            ],
-            [
-                'id'    => 163,
-                'title' => 'management_show',
-            ],
-            [
-                'id'    => 164,
-                'title' => 'management_delete',
-            ],
-            [
-                'id'    => 165,
-                'title' => 'management_access',
-            ],
-            [
-                'id'    => 166,
-                'title' => 'epic_create',
-            ],
-            [
-                'id'    => 167,
-                'title' => 'epic_edit',
-            ],
-            [
-                'id'    => 168,
-                'title' => 'epic_show',
-            ],
-            [
-                'id'    => 169,
-                'title' => 'epic_delete',
-            ],
-            [
-                'id'    => 170,
-                'title' => 'epic_access',
-            ],
-            [
-                'id'    => 171,
-                'title' => 'epic_status_create',
-            ],
-            [
-                'id'    => 172,
-                'title' => 'epic_status_edit',
-            ],
-            [
-                'id'    => 173,
-                'title' => 'epic_status_show',
-            ],
-            [
-                'id'    => 174,
-                'title' => 'epic_status_delete',
-            ],
-            [
-                'id'    => 175,
-                'title' => 'epic_status_access',
-            ],
-            [
-                'id'    => 176,
-                'title' => 'task_create',
-            ],
-            [
-                'id'    => 177,
-                'title' => 'task_edit',
-            ],
-            [
-                'id'    => 178,
-                'title' => 'task_show',
-            ],
-            [
-                'id'    => 179,
-                'title' => 'task_delete',
-            ],
-            [
-                'id'    => 180,
-                'title' => 'task_access',
-            ],
-            [
-                'id'    => 181,
-                'title' => 'task_action_create',
-            ],
-            [
-                'id'    => 182,
-                'title' => 'task_action_edit',
-            ],
-            [
-                'id'    => 183,
-                'title' => 'task_action_show',
-            ],
-            [
-                'id'    => 184,
-                'title' => 'task_action_delete',
-            ],
-            [
-                'id'    => 185,
-                'title' => 'task_action_access',
-            ],
-            [
-                'id'    => 186,
-                'title' => 'status_task_create',
-            ],
-            [
-                'id'    => 187,
-                'title' => 'status_task_edit',
-            ],
-            [
-                'id'    => 188,
-                'title' => 'status_task_show',
-            ],
-            [
-                'id'    => 189,
-                'title' => 'status_task_delete',
-            ],
-            [
-                'id'    => 190,
-                'title' => 'status_task_access',
-            ],
-            [
-                'id'    => 191,
-                'title' => 'task_mail_create',
-            ],
-            [
-                'id'    => 192,
-                'title' => 'task_mail_edit',
-            ],
-            [
-                'id'    => 193,
-                'title' => 'task_mail_show',
-            ],
-            [
-                'id'    => 194,
-                'title' => 'task_mail_delete',
-            ],
-            [
-                'id'    => 195,
-                'title' => 'task_mail_access',
-            ],
-            [
-                'id'    => 196,
+                'id'    => 160,
                 'title' => 'documentation_manager_access',
             ],
             [
-                'id'    => 197,
+                'id'    => 161,
                 'title' => 'website_management_access',
             ],
             [
-                'id'    => 198,
+                'id'    => 162,
                 'title' => 'project_category_create',
             ],
             [
-                'id'    => 199,
+                'id'    => 163,
                 'title' => 'project_category_edit',
             ],
             [
-                'id'    => 200,
+                'id'    => 164,
                 'title' => 'project_category_show',
             ],
             [
-                'id'    => 201,
+                'id'    => 165,
                 'title' => 'project_category_delete',
             ],
             [
-                'id'    => 202,
+                'id'    => 166,
                 'title' => 'project_category_access',
             ],
             [
-                'id'    => 203,
+                'id'    => 167,
                 'title' => 'project_story_create',
             ],
             [
-                'id'    => 204,
+                'id'    => 168,
                 'title' => 'project_story_edit',
             ],
             [
-                'id'    => 205,
+                'id'    => 169,
                 'title' => 'project_story_show',
             ],
             [
-                'id'    => 206,
+                'id'    => 170,
                 'title' => 'project_story_delete',
             ],
             [
-                'id'    => 207,
+                'id'    => 171,
                 'title' => 'project_story_access',
             ],
             [
-                'id'    => 208,
+                'id'    => 172,
                 'title' => 'blog_create',
             ],
             [
-                'id'    => 209,
+                'id'    => 173,
                 'title' => 'blog_edit',
             ],
             [
-                'id'    => 210,
+                'id'    => 174,
                 'title' => 'blog_show',
             ],
             [
-                'id'    => 211,
+                'id'    => 175,
                 'title' => 'blog_delete',
             ],
             [
-                'id'    => 212,
+                'id'    => 176,
                 'title' => 'blog_access',
             ],
             [
-                'id'    => 213,
+                'id'    => 177,
                 'title' => 'page_create',
             ],
             [
-                'id'    => 214,
+                'id'    => 178,
                 'title' => 'page_edit',
             ],
             [
-                'id'    => 215,
+                'id'    => 179,
                 'title' => 'page_show',
             ],
             [
-                'id'    => 216,
+                'id'    => 180,
                 'title' => 'page_delete',
             ],
             [
-                'id'    => 217,
+                'id'    => 181,
                 'title' => 'page_access',
             ],
             [
-                'id'    => 218,
+                'id'    => 182,
                 'title' => 'contact_form_create',
             ],
             [
-                'id'    => 219,
+                'id'    => 183,
                 'title' => 'contact_form_edit',
             ],
             [
-                'id'    => 220,
+                'id'    => 184,
                 'title' => 'contact_form_show',
             ],
             [
-                'id'    => 221,
+                'id'    => 185,
                 'title' => 'contact_form_delete',
             ],
             [
-                'id'    => 222,
+                'id'    => 186,
                 'title' => 'contact_form_access',
             ],
             [
-                'id'    => 223,
+                'id'    => 187,
                 'title' => 'project_documentation_create',
             ],
             [
-                'id'    => 224,
+                'id'    => 188,
                 'title' => 'project_documentation_edit',
             ],
             [
-                'id'    => 225,
+                'id'    => 189,
                 'title' => 'project_documentation_show',
             ],
             [
-                'id'    => 226,
+                'id'    => 190,
                 'title' => 'project_documentation_delete',
             ],
             [
-                'id'    => 227,
+                'id'    => 191,
                 'title' => 'project_documentation_access',
             ],
             [
-                'id'    => 228,
+                'id'    => 192,
                 'title' => 'documenation_chapter_create',
             ],
             [
-                'id'    => 229,
+                'id'    => 193,
                 'title' => 'documenation_chapter_edit',
             ],
             [
-                'id'    => 230,
+                'id'    => 194,
                 'title' => 'documenation_chapter_show',
             ],
             [
-                'id'    => 231,
+                'id'    => 195,
                 'title' => 'documenation_chapter_delete',
             ],
             [
-                'id'    => 232,
+                'id'    => 196,
                 'title' => 'documenation_chapter_access',
             ],
             [
-                'id'    => 233,
+                'id'    => 197,
                 'title' => 'chapter_content_create',
             ],
             [
-                'id'    => 234,
+                'id'    => 198,
                 'title' => 'chapter_content_edit',
             ],
             [
-                'id'    => 235,
+                'id'    => 199,
                 'title' => 'chapter_content_show',
             ],
             [
-                'id'    => 236,
+                'id'    => 200,
                 'title' => 'chapter_content_delete',
             ],
             [
-                'id'    => 237,
+                'id'    => 201,
                 'title' => 'chapter_content_access',
             ],
             [
-                'id'    => 238,
+                'id'    => 202,
                 'title' => 'client_evaluation_create',
             ],
             [
-                'id'    => 239,
+                'id'    => 203,
                 'title' => 'client_evaluation_edit',
             ],
             [
-                'id'    => 240,
+                'id'    => 204,
                 'title' => 'client_evaluation_show',
             ],
             [
-                'id'    => 241,
+                'id'    => 205,
                 'title' => 'client_evaluation_delete',
             ],
             [
-                'id'    => 242,
+                'id'    => 206,
                 'title' => 'client_evaluation_access',
             ],
             [
-                'id'    => 243,
+                'id'    => 207,
                 'title' => 'appointments_management_access',
             ],
             [
-                'id'    => 244,
+                'id'    => 208,
                 'title' => 'appointment_create',
             ],
             [
-                'id'    => 245,
+                'id'    => 209,
                 'title' => 'appointment_edit',
             ],
             [
-                'id'    => 246,
+                'id'    => 210,
                 'title' => 'appointment_show',
             ],
             [
-                'id'    => 247,
+                'id'    => 211,
                 'title' => 'appointment_delete',
             ],
             [
-                'id'    => 248,
+                'id'    => 212,
                 'title' => 'appointment_access',
             ],
             [
-                'id'    => 249,
+                'id'    => 213,
                 'title' => 'profile_password_edit',
             ],
         ];

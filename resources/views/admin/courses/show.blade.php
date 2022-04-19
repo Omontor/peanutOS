@@ -49,14 +49,6 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.course.fields.price') }}
-                        </th>
-                        <td>
-                            {{ $course->price }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
                             {{ trans('cruds.course.fields.thumbnail') }}
                         </th>
                         <td>
