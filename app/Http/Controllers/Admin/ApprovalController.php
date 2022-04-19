@@ -53,8 +53,8 @@ class ApprovalController extends Controller
                 return $row->client ? $row->client->name : '';
             });
 
-            $table->addColumn('quotation_total', function ($row) {
-                return $row->quotation ? $row->quotation->total : '';
+            $table->addColumn('quotation_title', function ($row) {
+                return $row->quotation ? $row->quotation->title : '';
             });
 
             $table->editColumn('status', function ($row) {
@@ -87,9 +87,9 @@ class ApprovalController extends Controller
     {
         abort_if(Gate::denies('approval_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $clients = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $clients = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $quotations = Quotation::all()->pluck('total', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $quotations = Quotation::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.approvals.create', compact('clients', 'quotations'));
     }
@@ -113,13 +113,13 @@ class ApprovalController extends Controller
     {
         abort_if(Gate::denies('approval_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $clients = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $clients = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $quotations = Quotation::all()->pluck('total', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $quotations = Quotation::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $approval->load('client', 'quotation');
 
-        return view('admin.approvals.edit', compact('clients', 'quotations', 'approval'));
+        return view('admin.approvals.edit', compact('approval', 'clients', 'quotations'));
     }
 
     public function update(UpdateApprovalRequest $request, Approval $approval)

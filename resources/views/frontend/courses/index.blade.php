@@ -35,9 +35,6 @@
                                         {{ trans('cruds.course.fields.description') }}
                                     </th>
                                     <th>
-                                        {{ trans('cruds.course.fields.price') }}
-                                    </th>
-                                    <th>
                                         {{ trans('cruds.course.fields.thumbnail') }}
                                     </th>
                                     <th>
@@ -65,9 +62,6 @@
                                         </td>
                                         <td>
                                             {{ $course->description ?? '' }}
-                                        </td>
-                                        <td>
-                                            {{ $course->price ?? '' }}
                                         </td>
                                         <td>
                                             @foreach($course->thumbnail as $key => $media)

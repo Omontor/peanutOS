@@ -54,7 +54,7 @@
                                     {{ $approval->client->name ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $approval->quotation->total ?? '' }}
+                                    {{ $approval->quotation->title ?? '' }}
                                 </td>
                                 <td>
                                     {{ $approval->status ?? '' }}

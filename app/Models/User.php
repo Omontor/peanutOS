@@ -85,29 +85,9 @@ class User extends Authenticatable
         return $this->hasMany(Approval::class, 'client_id', 'id');
     }
 
-    public function leadManagements()
-    {
-        return $this->hasMany(Management::class, 'lead_id', 'id');
-    }
-
-    public function reporterEpics()
-    {
-        return $this->hasMany(Epic::class, 'reporter_id', 'id');
-    }
-
-    public function asigneeTasks()
-    {
-        return $this->hasMany(Task::class, 'asignee_id', 'id');
-    }
-
     public function userUserAlerts()
     {
         return $this->belongsToMany(UserAlert::class);
-    }
-
-    public function asigneesEpics()
-    {
-        return $this->belongsToMany(Epic::class);
     }
 
     public function getEmailVerifiedAtAttribute($value)
