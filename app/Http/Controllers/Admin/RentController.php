@@ -62,8 +62,8 @@ class RentController extends Controller
 
                 return implode(' ', $labels);
             });
-            $table->addColumn('quotation_total', function ($row) {
-                return $row->quotation ? $row->quotation->total : '';
+            $table->addColumn('quotation_title', function ($row) {
+                return $row->quotation ? $row->quotation->title : '';
             });
 
             $table->editColumn('quotation.title', function ($row) {
@@ -112,7 +112,7 @@ class RentController extends Controller
 
         $assets = Asset::pluck('name', 'id');
 
-        $quotations = Quotation::pluck('total', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $quotations = Quotation::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.rents.create', compact('assets', 'clients', 'quotations'));
     }
@@ -144,7 +144,7 @@ class RentController extends Controller
 
         $assets = Asset::pluck('name', 'id');
 
-        $quotations = Quotation::pluck('total', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $quotations = Quotation::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $rent->load('client', 'assets', 'quotation');
 

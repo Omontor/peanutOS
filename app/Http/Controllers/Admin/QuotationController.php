@@ -96,13 +96,13 @@ class QuotationController extends Controller
     {
         abort_if(Gate::denies('quotation_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $clients = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $clients = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $assets = Asset::all()->pluck('name', 'id');
+        $assets = Asset::pluck('name', 'id');
 
-        $clauses = RentalClause::all()->pluck('title', 'id');
+        $clauses = RentalClause::pluck('title', 'id');
 
-        return view('admin.quotations.create', compact('clients', 'assets', 'clauses'));
+        return view('admin.quotations.create', compact('assets', 'clauses', 'clients'));
     }
 
     public function store(StoreQuotationRequest $request)
@@ -118,15 +118,15 @@ class QuotationController extends Controller
     {
         abort_if(Gate::denies('quotation_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $clients = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $clients = User::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $assets = Asset::all()->pluck('name', 'id');
+        $assets = Asset::pluck('name', 'id');
 
-        $clauses = RentalClause::all()->pluck('title', 'id');
+        $clauses = RentalClause::pluck('title', 'id');
 
         $quotation->load('client', 'assets', 'clauses');
 
-        return view('admin.quotations.edit', compact('clients', 'assets', 'clauses', 'quotation'));
+        return view('admin.quotations.edit', compact('assets', 'clauses', 'clients', 'quotation'));
     }
 
     public function update(UpdateQuotationRequest $request, Quotation $quotation)

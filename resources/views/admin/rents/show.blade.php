@@ -46,7 +46,7 @@
                             {{ trans('cruds.rent.fields.quotation') }}
                         </th>
                         <td>
-                            {{ $rent->quotation->total ?? '' }}
+                            {{ $rent->quotation->title ?? '' }}
                         </td>
                     </tr>
                     <tr>

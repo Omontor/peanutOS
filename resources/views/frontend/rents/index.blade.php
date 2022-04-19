@@ -79,7 +79,7 @@
                                         <select class="search">
                                             <option value>{{ trans('global.all') }}</option>
                                             @foreach($quotations as $key => $item)
-                                                <option value="{{ $item->total }}">{{ $item->total }}</option>
+                                                <option value="{{ $item->title }}">{{ $item->title }}</option>
                                             @endforeach
                                         </select>
                                     </td>
@@ -114,7 +114,7 @@
                                             @endforeach
                                         </td>
                                         <td>
-                                            {{ $rent->quotation->total ?? '' }}
+                                            {{ $rent->quotation->title ?? '' }}
                                         </td>
                                         <td>
                                             {{ $rent->quotation->title ?? '' }}

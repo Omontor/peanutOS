@@ -71,7 +71,7 @@
                                     @endforeach
                                 </td>
                                 <td>
-                                    {{ $rent->quotation->total ?? '' }}
+                                    {{ $rent->quotation->title ?? '' }}
                                 </td>
                                 <td>
                                     {{ $rent->quotation->title ?? '' }}

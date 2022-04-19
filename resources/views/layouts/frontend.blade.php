@@ -122,11 +122,6 @@
                                             {{ trans('cruds.documentManager.title') }}
                                         </a>
                                     @endcan
-                                    @can('contract_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.contracts.index') }}">
-                                            {{ trans('cruds.contract.title') }}
-                                        </a>
-                                    @endcan
                                     @can('static_clause_access')
                                         <a class="dropdown-item ml-3" href="{{ route('frontend.static-clauses.index') }}">
                                             {{ trans('cruds.staticClause.title') }}
@@ -135,6 +130,11 @@
                                     @can('dynamic_clause_access')
                                         <a class="dropdown-item ml-3" href="{{ route('frontend.dynamic-clauses.index') }}">
                                             {{ trans('cruds.dynamicClause.title') }}
+                                        </a>
+                                    @endcan
+                                    @can('contract_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.contracts.index') }}">
+                                            {{ trans('cruds.contract.title') }}
                                         </a>
                                     @endcan
                                     @can('asset_management_access')
@@ -157,9 +157,9 @@
                                             {{ trans('cruds.rental.title') }}
                                         </a>
                                     @endcan
-                                    @can('rent_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.rents.index') }}">
-                                            {{ trans('cruds.rent.title') }}
+                                    @can('rental_clause_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.rental-clauses.index') }}">
+                                            {{ trans('cruds.rentalClause.title') }}
                                         </a>
                                     @endcan
                                     @can('quotation_access')
@@ -167,9 +167,9 @@
                                             {{ trans('cruds.quotation.title') }}
                                         </a>
                                     @endcan
-                                    @can('rental_clause_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.rental-clauses.index') }}">
-                                            {{ trans('cruds.rentalClause.title') }}
+                                    @can('rent_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.rents.index') }}">
+                                            {{ trans('cruds.rent.title') }}
                                         </a>
                                     @endcan
                                     @can('approval_access')

@@ -43,7 +43,7 @@ class RentController extends Controller
 
         $assets = Asset::pluck('name', 'id');
 
-        $quotations = Quotation::pluck('total', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $quotations = Quotation::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('frontend.rents.create', compact('assets', 'clients', 'quotations'));
     }
@@ -75,7 +75,7 @@ class RentController extends Controller
 
         $assets = Asset::pluck('name', 'id');
 
-        $quotations = Quotation::pluck('total', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $quotations = Quotation::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $rent->load('client', 'assets', 'quotation');
 
