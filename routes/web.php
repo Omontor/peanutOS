@@ -159,42 +159,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('witness-categories/destroy', 'WitnessCategoryController@massDestroy')->name('witness-categories.massDestroy');
     Route::resource('witness-categories', 'WitnessCategoryController');
 
-    // Management
-    Route::delete('managements/destroy', 'ManagementController@massDestroy')->name('managements.massDestroy');
-    Route::post('managements/media', 'ManagementController@storeMedia')->name('managements.storeMedia');
-    Route::post('managements/ckmedia', 'ManagementController@storeCKEditorImages')->name('managements.storeCKEditorImages');
-    Route::resource('managements', 'ManagementController');
-
-    // Epic
-    Route::delete('epics/destroy', 'EpicController@massDestroy')->name('epics.massDestroy');
-    Route::post('epics/media', 'EpicController@storeMedia')->name('epics.storeMedia');
-    Route::post('epics/ckmedia', 'EpicController@storeCKEditorImages')->name('epics.storeCKEditorImages');
-    Route::resource('epics', 'EpicController');
-
-    // Epic Status
-    Route::delete('epic-statuses/destroy', 'EpicStatusController@massDestroy')->name('epic-statuses.massDestroy');
-    Route::resource('epic-statuses', 'EpicStatusController');
-
-    // Task
-    Route::delete('tasks/destroy', 'TaskController@massDestroy')->name('tasks.massDestroy');
-    Route::post('tasks/media', 'TaskController@storeMedia')->name('tasks.storeMedia');
-    Route::post('tasks/ckmedia', 'TaskController@storeCKEditorImages')->name('tasks.storeCKEditorImages');
-    Route::resource('tasks', 'TaskController');
-
-    // Task Action
-    Route::delete('task-actions/destroy', 'TaskActionController@massDestroy')->name('task-actions.massDestroy');
-    Route::post('task-actions/media', 'TaskActionController@storeMedia')->name('task-actions.storeMedia');
-    Route::post('task-actions/ckmedia', 'TaskActionController@storeCKEditorImages')->name('task-actions.storeCKEditorImages');
-    Route::resource('task-actions', 'TaskActionController');
-
-    // Status Task
-    Route::delete('status-tasks/destroy', 'StatusTaskController@massDestroy')->name('status-tasks.massDestroy');
-    Route::resource('status-tasks', 'StatusTaskController');
-
-    // Task Mail
-    Route::delete('task-mails/destroy', 'TaskMailController@massDestroy')->name('task-mails.massDestroy');
-    Route::resource('task-mails', 'TaskMailController');
-
     // Project Category
     Route::delete('project-categories/destroy', 'ProjectCategoryController@massDestroy')->name('project-categories.massDestroy');
     Route::resource('project-categories', 'ProjectCategoryController');
@@ -422,42 +386,6 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     // Witness Category
     Route::delete('witness-categories/destroy', 'WitnessCategoryController@massDestroy')->name('witness-categories.massDestroy');
     Route::resource('witness-categories', 'WitnessCategoryController');
-
-    // Management
-    Route::delete('managements/destroy', 'ManagementController@massDestroy')->name('managements.massDestroy');
-    Route::post('managements/media', 'ManagementController@storeMedia')->name('managements.storeMedia');
-    Route::post('managements/ckmedia', 'ManagementController@storeCKEditorImages')->name('managements.storeCKEditorImages');
-    Route::resource('managements', 'ManagementController');
-
-    // Epic
-    Route::delete('epics/destroy', 'EpicController@massDestroy')->name('epics.massDestroy');
-    Route::post('epics/media', 'EpicController@storeMedia')->name('epics.storeMedia');
-    Route::post('epics/ckmedia', 'EpicController@storeCKEditorImages')->name('epics.storeCKEditorImages');
-    Route::resource('epics', 'EpicController');
-
-    // Epic Status
-    Route::delete('epic-statuses/destroy', 'EpicStatusController@massDestroy')->name('epic-statuses.massDestroy');
-    Route::resource('epic-statuses', 'EpicStatusController');
-
-    // Task
-    Route::delete('tasks/destroy', 'TaskController@massDestroy')->name('tasks.massDestroy');
-    Route::post('tasks/media', 'TaskController@storeMedia')->name('tasks.storeMedia');
-    Route::post('tasks/ckmedia', 'TaskController@storeCKEditorImages')->name('tasks.storeCKEditorImages');
-    Route::resource('tasks', 'TaskController');
-
-    // Task Action
-    Route::delete('task-actions/destroy', 'TaskActionController@massDestroy')->name('task-actions.massDestroy');
-    Route::post('task-actions/media', 'TaskActionController@storeMedia')->name('task-actions.storeMedia');
-    Route::post('task-actions/ckmedia', 'TaskActionController@storeCKEditorImages')->name('task-actions.storeCKEditorImages');
-    Route::resource('task-actions', 'TaskActionController');
-
-    // Status Task
-    Route::delete('status-tasks/destroy', 'StatusTaskController@massDestroy')->name('status-tasks.massDestroy');
-    Route::resource('status-tasks', 'StatusTaskController');
-
-    // Task Mail
-    Route::delete('task-mails/destroy', 'TaskMailController@massDestroy')->name('task-mails.massDestroy');
-    Route::resource('task-mails', 'TaskMailController');
 
     // Project Category
     Route::delete('project-categories/destroy', 'ProjectCategoryController@massDestroy')->name('project-categories.massDestroy');

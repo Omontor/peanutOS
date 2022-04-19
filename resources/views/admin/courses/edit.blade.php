@@ -39,14 +39,6 @@
                 <span class="help-block">{{ trans('cruds.course.fields.description_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="price">{{ trans('cruds.course.fields.price') }}</label>
-                <input class="form-control {{ $errors->has('price') ? 'is-invalid' : '' }}" type="number" name="price" id="price" value="{{ old('price', $course->price) }}" step="0.01">
-                @if($errors->has('price'))
-                    <span class="text-danger">{{ $errors->first('price') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.course.fields.price_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label for="thumbnail">{{ trans('cruds.course.fields.thumbnail') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('thumbnail') ? 'is-invalid' : '' }}" id="thumbnail-dropzone">
                 </div>
@@ -73,8 +65,8 @@
                     <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
                 </div>
                 <select class="form-control select2 {{ $errors->has('students') ? 'is-invalid' : '' }}" name="students[]" id="students" multiple>
-                    @foreach($students as $id => $students)
-                        <option value="{{ $id }}" {{ (in_array($id, old('students', [])) || $course->students->contains($id)) ? 'selected' : '' }}>{{ $students }}</option>
+                    @foreach($students as $id => $student)
+                        <option value="{{ $id }}" {{ (in_array($id, old('students', [])) || $course->students->contains($id)) ? 'selected' : '' }}>{{ $student }}</option>
                     @endforeach
                 </select>
                 @if($errors->has('students'))

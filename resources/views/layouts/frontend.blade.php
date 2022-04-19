@@ -202,46 +202,6 @@
                                             {{ trans('cruds.clientEvaluation.title') }}
                                         </a>
                                     @endcan
-                                    @can('project_management_access')
-                                        <a class="dropdown-item disabled" href="#">
-                                            {{ trans('cruds.projectManagement.title') }}
-                                        </a>
-                                    @endcan
-                                    @can('management_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.managements.index') }}">
-                                            {{ trans('cruds.management.title') }}
-                                        </a>
-                                    @endcan
-                                    @can('epic_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.epics.index') }}">
-                                            {{ trans('cruds.epic.title') }}
-                                        </a>
-                                    @endcan
-                                    @can('epic_status_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.epic-statuses.index') }}">
-                                            {{ trans('cruds.epicStatus.title') }}
-                                        </a>
-                                    @endcan
-                                    @can('task_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.tasks.index') }}">
-                                            {{ trans('cruds.task.title') }}
-                                        </a>
-                                    @endcan
-                                    @can('task_action_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.task-actions.index') }}">
-                                            {{ trans('cruds.taskAction.title') }}
-                                        </a>
-                                    @endcan
-                                    @can('status_task_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.status-tasks.index') }}">
-                                            {{ trans('cruds.statusTask.title') }}
-                                        </a>
-                                    @endcan
-                                    @can('task_mail_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.task-mails.index') }}">
-                                            {{ trans('cruds.taskMail.title') }}
-                                        </a>
-                                    @endcan
                                     @can('event_management_access')
                                         <a class="dropdown-item disabled" href="#">
                                             {{ trans('cruds.eventManagement.title') }}
@@ -252,14 +212,14 @@
                                             {{ trans('cruds.event.title') }}
                                         </a>
                                     @endcan
-                                    @can('event_day_access')
-                                        <a class="dropdown-item ml-3" href="{{ route('frontend.event-days.index') }}">
-                                            {{ trans('cruds.eventDay.title') }}
-                                        </a>
-                                    @endcan
                                     @can('venue_access')
                                         <a class="dropdown-item ml-3" href="{{ route('frontend.venues.index') }}">
                                             {{ trans('cruds.venue.title') }}
+                                        </a>
+                                    @endcan
+                                    @can('event_day_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.event-days.index') }}">
+                                            {{ trans('cruds.eventDay.title') }}
                                         </a>
                                     @endcan
                                     @can('witness_category_access')

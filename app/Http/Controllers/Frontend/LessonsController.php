@@ -44,10 +44,6 @@ class LessonsController extends Controller
             $lesson->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('thumbnail');
         }
 
-        if ($request->input('video', false)) {
-            $lesson->addMedia(storage_path('tmp/uploads/' . basename($request->input('video'))))->toMediaCollection('video');
-        }
-
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $lesson->id]);
         }
@@ -82,17 +78,6 @@ class LessonsController extends Controller
             if (count($media) === 0 || !in_array($file, $media)) {
                 $lesson->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('thumbnail');
             }
-        }
-
-        if ($request->input('video', false)) {
-            if (!$lesson->video || $request->input('video') !== $lesson->video->file_name) {
-                if ($lesson->video) {
-                    $lesson->video->delete();
-                }
-                $lesson->addMedia(storage_path('tmp/uploads/' . basename($request->input('video'))))->toMediaCollection('video');
-            }
-        } elseif ($lesson->video) {
-            $lesson->video->delete();
         }
 
         return redirect()->route('frontend.lessons.index');

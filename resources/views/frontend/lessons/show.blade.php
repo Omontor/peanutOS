@@ -72,14 +72,10 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        {{ trans('cruds.lesson.fields.video') }}
+                                        {{ trans('cruds.lesson.fields.youtube_url') }}
                                     </th>
                                     <td>
-                                        @if($lesson->video)
-                                            <a href="{{ $lesson->video->getUrl() }}" target="_blank">
-                                                {{ trans('global.view_file') }}
-                                            </a>
-                                        @endif
+                                        {{ $lesson->youtube_url }}
                                     </td>
                                 </tr>
                                 <tr>

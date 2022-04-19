@@ -101,29 +101,4 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
 
     // Witness Category
     Route::apiResource('witness-categories', 'WitnessCategoryApiController');
-
-    // Management
-    Route::post('managements/media', 'ManagementApiController@storeMedia')->name('managements.storeMedia');
-    Route::apiResource('managements', 'ManagementApiController');
-
-    // Epic
-    Route::post('epics/media', 'EpicApiController@storeMedia')->name('epics.storeMedia');
-    Route::apiResource('epics', 'EpicApiController');
-
-    // Epic Status
-    Route::apiResource('epic-statuses', 'EpicStatusApiController');
-
-    // Task
-    Route::post('tasks/media', 'TaskApiController@storeMedia')->name('tasks.storeMedia');
-    Route::apiResource('tasks', 'TaskApiController');
-
-    // Task Action
-    Route::post('task-actions/media', 'TaskActionApiController@storeMedia')->name('task-actions.storeMedia');
-    Route::apiResource('task-actions', 'TaskActionApiController');
-
-    // Status Task
-    Route::apiResource('status-tasks', 'StatusTaskApiController');
-
-    // Task Mail
-    Route::apiResource('task-mails', 'TaskMailApiController');
 });

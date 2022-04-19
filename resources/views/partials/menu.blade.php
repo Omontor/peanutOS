@@ -343,107 +343,8 @@
                         </ul>
                     </li>
                 @endcan
-                @can('project_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/managements*") ? "menu-open" : "" }} {{ request()->is("admin/epics*") ? "menu-open" : "" }} {{ request()->is("admin/epic-statuses*") ? "menu-open" : "" }} {{ request()->is("admin/tasks*") ? "menu-open" : "" }} {{ request()->is("admin/task-actions*") ? "menu-open" : "" }} {{ request()->is("admin/status-tasks*") ? "menu-open" : "" }} {{ request()->is("admin/task-mails*") ? "menu-open" : "" }}">
-                        <a class="nav-link nav-dropdown-toggle" href="#">
-                            <i class="fa-fw nav-icon fab fa-pied-piper">
-
-                            </i>
-                            <p>
-                                {{ trans('cruds.projectManagement.title') }}
-                                <i class="right fa fa-fw fa-angle-left nav-icon"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            @can('management_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.managements.index") }}" class="nav-link {{ request()->is("admin/managements") || request()->is("admin/managements/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-project-diagram">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.management.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('epic_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.epics.index") }}" class="nav-link {{ request()->is("admin/epics") || request()->is("admin/epics/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fab fa-algolia">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.epic.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('epic_status_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.epic-statuses.index") }}" class="nav-link {{ request()->is("admin/epic-statuses") || request()->is("admin/epic-statuses/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.epicStatus.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('task_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.tasks.index") }}" class="nav-link {{ request()->is("admin/tasks") || request()->is("admin/tasks/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-check-double">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.task.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('task_action_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.task-actions.index") }}" class="nav-link {{ request()->is("admin/task-actions") || request()->is("admin/task-actions/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon far fa-calendar-plus">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.taskAction.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('status_task_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.status-tasks.index") }}" class="nav-link {{ request()->is("admin/status-tasks") || request()->is("admin/status-tasks/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.statusTask.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('task_mail_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.task-mails.index") }}" class="nav-link {{ request()->is("admin/task-mails") || request()->is("admin/task-mails/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-at">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.taskMail.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                        </ul>
-                    </li>
-                @endcan
                 @can('event_management_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/events*") ? "menu-open" : "" }} {{ request()->is("admin/event-days*") ? "menu-open" : "" }} {{ request()->is("admin/venues*") ? "menu-open" : "" }} {{ request()->is("admin/witness-categories*") ? "menu-open" : "" }} {{ request()->is("admin/event-witnesses*") ? "menu-open" : "" }}">
+                    <li class="nav-item has-treeview {{ request()->is("admin/events*") ? "menu-open" : "" }} {{ request()->is("admin/venues*") ? "menu-open" : "" }} {{ request()->is("admin/event-days*") ? "menu-open" : "" }} {{ request()->is("admin/witness-categories*") ? "menu-open" : "" }} {{ request()->is("admin/event-witnesses*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon far fa-calendar-alt">
 
@@ -466,6 +367,18 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('venue_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.venues.index") }}" class="nav-link {{ request()->is("admin/venues") || request()->is("admin/venues/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-map-pin">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.venue.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
                             @can('event_day_access')
                                 <li class="nav-item">
                                     <a href="{{ route("admin.event-days.index") }}" class="nav-link {{ request()->is("admin/event-days") || request()->is("admin/event-days/*") ? "active" : "" }}">
@@ -474,18 +387,6 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.eventDay.title') }}
-                                        </p>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('venue_access')
-                                <li class="nav-item">
-                                    <a href="{{ route("admin.venues.index") }}" class="nav-link {{ request()->is("admin/venues") || request()->is("admin/venues/*") ? "active" : "" }}">
-                                        <i class="fa-fw nav-icon fas fa-cogs">
-
-                                        </i>
-                                        <p>
-                                            {{ trans('cruds.venue.title') }}
                                         </p>
                                     </a>
                                 </li>

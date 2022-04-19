@@ -31,7 +31,7 @@ class LessonsController extends Controller
     {
         abort_if(Gate::denies('lesson_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $courses = Course::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $courses = Course::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         return view('admin.lessons.create', compact('courses'));
     }
@@ -42,10 +42,6 @@ class LessonsController extends Controller
 
         foreach ($request->input('thumbnail', []) as $file) {
             $lesson->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('thumbnail');
-        }
-
-        if ($request->input('video', false)) {
-            $lesson->addMedia(storage_path('tmp/uploads/' . basename($request->input('video'))))->toMediaCollection('video');
         }
 
         if ($media = $request->input('ck-media', false)) {
@@ -59,7 +55,7 @@ class LessonsController extends Controller
     {
         abort_if(Gate::denies('lesson_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $courses = Course::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $courses = Course::pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $lesson->load('course');
 
@@ -82,17 +78,6 @@ class LessonsController extends Controller
             if (count($media) === 0 || !in_array($file, $media)) {
                 $lesson->addMedia(storage_path('tmp/uploads/' . basename($file)))->toMediaCollection('thumbnail');
             }
-        }
-
-        if ($request->input('video', false)) {
-            if (!$lesson->video || $request->input('video') !== $lesson->video->file_name) {
-                if ($lesson->video) {
-                    $lesson->video->delete();
-                }
-                $lesson->addMedia(storage_path('tmp/uploads/' . basename($request->input('video'))))->toMediaCollection('video');
-            }
-        } elseif ($lesson->video) {
-            $lesson->video->delete();
         }
 
         return redirect()->route('admin.lessons.index');

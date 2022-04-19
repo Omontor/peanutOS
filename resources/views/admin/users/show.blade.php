@@ -102,28 +102,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#lead_managements" role="tab" data-toggle="tab">
-                {{ trans('cruds.management.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#reporter_epics" role="tab" data-toggle="tab">
-                {{ trans('cruds.epic.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#asignee_tasks" role="tab" data-toggle="tab">
-                {{ trans('cruds.task.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link" href="#user_user_alerts" role="tab" data-toggle="tab">
                 {{ trans('cruds.userAlert.title') }}
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#asignees_epics" role="tab" data-toggle="tab">
-                {{ trans('cruds.epic.title') }}
             </a>
         </li>
     </ul>
@@ -140,20 +120,8 @@
         <div class="tab-pane" role="tabpanel" id="client_approvals">
             @includeIf('admin.users.relationships.clientApprovals', ['approvals' => $user->clientApprovals])
         </div>
-        <div class="tab-pane" role="tabpanel" id="lead_managements">
-            @includeIf('admin.users.relationships.leadManagements', ['managements' => $user->leadManagements])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="reporter_epics">
-            @includeIf('admin.users.relationships.reporterEpics', ['epics' => $user->reporterEpics])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="asignee_tasks">
-            @includeIf('admin.users.relationships.asigneeTasks', ['tasks' => $user->asigneeTasks])
-        </div>
         <div class="tab-pane" role="tabpanel" id="user_user_alerts">
             @includeIf('admin.users.relationships.userUserAlerts', ['userAlerts' => $user->userUserAlerts])
-        </div>
-        <div class="tab-pane" role="tabpanel" id="asignees_epics">
-            @includeIf('admin.users.relationships.asigneesEpics', ['epics' => $user->asigneesEpics])
         </div>
     </div>
 </div>

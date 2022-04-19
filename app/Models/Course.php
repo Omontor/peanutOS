@@ -32,7 +32,6 @@ class Course extends Model implements HasMedia
         'teacher_id',
         'title',
         'description',
-        'price',
         'is_published',
         'created_at',
         'updated_at',

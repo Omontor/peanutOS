@@ -25,6 +25,13 @@ class StoreLessonRequest extends FormRequest
                 'string',
                 'required',
             ],
+            'thumbnail' => [
+                'array',
+            ],
+            'youtube_url' => [
+                'string',
+                'nullable',
+            ],
             'position' => [
                 'nullable',
                 'integer',

@@ -12,7 +12,6 @@ class CreateCoursesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
-            $table->decimal('price', 15, 2)->nullable();
             $table->boolean('is_published')->default(0)->nullable();
             $table->timestamps();
             $table->softDeletes();

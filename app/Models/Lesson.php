@@ -20,7 +20,6 @@ class Lesson extends Model implements HasMedia
 
     protected $appends = [
         'thumbnail',
-        'video',
     ];
 
     protected $dates = [
@@ -34,6 +33,7 @@ class Lesson extends Model implements HasMedia
         'title',
         'short_text',
         'long_text',
+        'youtube_url',
         'position',
         'is_published',
         'is_free',
@@ -63,11 +63,6 @@ class Lesson extends Model implements HasMedia
         });
 
         return $files;
-    }
-
-    public function getVideoAttribute()
-    {
-        return $this->getMedia('video')->last();
     }
 
     protected function serializeDate(DateTimeInterface $date)

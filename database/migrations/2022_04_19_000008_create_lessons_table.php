@@ -13,6 +13,7 @@ class CreateLessonsTable extends Migration
             $table->string('title')->nullable();
             $table->longText('short_text')->nullable();
             $table->longText('long_text')->nullable();
+            $table->string('youtube_url')->nullable();
             $table->integer('position')->nullable();
             $table->boolean('is_published')->default(0)->nullable();
             $table->boolean('is_free')->default(0)->nullable();
