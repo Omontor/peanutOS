@@ -98,6 +98,9 @@ class AssetController extends Controller
             $table->editColumn('week_price', function ($row) {
                 return $row->week_price ? $row->week_price : '';
             });
+            $table->editColumn('status', function ($row) {
+                return $row->status ? $row->status : '';
+            });
 
             $table->rawColumns(['actions', 'placeholder', 'front_photo', 'side_photo', 'quarter_photo', 'invoice']);
 

@@ -28,6 +28,14 @@
                                 </tr>
                                 <tr>
                                     <th>
+                                        {{ trans('cruds.rent.fields.title') }}
+                                    </th>
+                                    <td>
+                                        {{ $rent->title }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
                                         {{ trans('cruds.rent.fields.client') }}
                                     </th>
                                     <td>

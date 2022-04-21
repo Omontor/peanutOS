@@ -25,6 +25,9 @@
                                 {{ trans('cruds.rent.fields.id') }}
                             </th>
                             <th>
+                                {{ trans('cruds.rent.fields.title') }}
+                            </th>
+                            <th>
                                 {{ trans('cruds.rent.fields.client') }}
                             </th>
                             <th>
@@ -61,6 +64,9 @@
                                 </td>
                                 <td>
                                     {{ $rent->id ?? '' }}
+                                </td>
+                                <td>
+                                    {{ $rent->title ?? '' }}
                                 </td>
                                 <td>
                                     {{ $rent->client->name ?? '' }}

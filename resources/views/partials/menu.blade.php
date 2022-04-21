@@ -218,7 +218,7 @@
                     </li>
                 @endcan
                 @can('rental_access')
-                    <li class="nav-item has-treeview {{ request()->is("admin/rental-clauses*") ? "menu-open" : "" }} {{ request()->is("admin/quotations*") ? "menu-open" : "" }} {{ request()->is("admin/rents*") ? "menu-open" : "" }} {{ request()->is("admin/approvals*") ? "menu-open" : "" }}">
+                    <li class="nav-item has-treeview {{ request()->is("admin/rental-clauses*") ? "menu-open" : "" }} {{ request()->is("admin/quotations*") ? "menu-open" : "" }} {{ request()->is("admin/rents*") ? "menu-open" : "" }} {{ request()->is("admin/approvals*") ? "menu-open" : "" }} {{ request()->is("admin/asset-returns*") ? "menu-open" : "" }}">
                         <a class="nav-link nav-dropdown-toggle" href="#">
                             <i class="fa-fw nav-icon fas fa-money-bill-alt">
 
@@ -273,6 +273,18 @@
                                         </i>
                                         <p>
                                             {{ trans('cruds.approval.title') }}
+                                        </p>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('asset_return_access')
+                                <li class="nav-item">
+                                    <a href="{{ route("admin.asset-returns.index") }}" class="nav-link {{ request()->is("admin/asset-returns") || request()->is("admin/asset-returns/*") ? "active" : "" }}">
+                                        <i class="fa-fw nav-icon fas fa-truck">
+
+                                        </i>
+                                        <p>
+                                            {{ trans('cruds.assetReturn.title') }}
                                         </p>
                                     </a>
                                 </li>

@@ -35,6 +35,7 @@ class Rent extends Model implements HasMedia
     ];
 
     protected $fillable = [
+        'title',
         'client_id',
         'quotation_id',
         'from',

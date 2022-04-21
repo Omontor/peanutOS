@@ -15,6 +15,7 @@ class CreateAssetsTable extends Migration
             $table->decimal('cost', 15, 2)->nullable();
             $table->decimal('day_price', 15, 2);
             $table->decimal('week_price', 15, 2)->nullable();
+            $table->integer('status')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

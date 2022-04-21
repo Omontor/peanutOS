@@ -14,6 +14,16 @@
                         @method('POST')
                         @csrf
                         <div class="form-group">
+                            <label for="title">{{ trans('cruds.rent.fields.title') }}</label>
+                            <input class="form-control" type="text" name="title" id="title" value="{{ old('title', '') }}">
+                            @if($errors->has('title'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('title') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.rent.fields.title_helper') }}</span>
+                        </div>
+                        <div class="form-group">
                             <label class="required" for="client_id">{{ trans('cruds.rent.fields.client') }}</label>
                             <select class="form-control select2" name="client_id" id="client_id" required>
                                 @foreach($clients as $id => $entry)

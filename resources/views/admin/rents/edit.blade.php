@@ -11,6 +11,14 @@
             @method('PUT')
             @csrf
             <div class="form-group">
+                <label for="title">{{ trans('cruds.rent.fields.title') }}</label>
+                <input class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" type="text" name="title" id="title" value="{{ old('title', $rent->title) }}">
+                @if($errors->has('title'))
+                    <span class="text-danger">{{ $errors->first('title') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.rent.fields.title_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="client_id">{{ trans('cruds.rent.fields.client') }}</label>
                 <select class="form-control select2 {{ $errors->has('client') ? 'is-invalid' : '' }}" name="client_id" id="client_id" required>
                     @foreach($clients as $id => $entry)

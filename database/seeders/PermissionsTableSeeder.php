@@ -860,6 +860,26 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 213,
+                'title' => 'asset_return_create',
+            ],
+            [
+                'id'    => 214,
+                'title' => 'asset_return_edit',
+            ],
+            [
+                'id'    => 215,
+                'title' => 'asset_return_show',
+            ],
+            [
+                'id'    => 216,
+                'title' => 'asset_return_delete',
+            ],
+            [
+                'id'    => 217,
+                'title' => 'asset_return_access',
+            ],
+            [
+                'id'    => 218,
                 'title' => 'profile_password_edit',
             ],
         ];

@@ -108,6 +108,16 @@
                             <span class="help-block">{{ trans('cruds.asset.fields.week_price_helper') }}</span>
                         </div>
                         <div class="form-group">
+                            <label for="status">{{ trans('cruds.asset.fields.status') }}</label>
+                            <input class="form-control" type="number" name="status" id="status" value="{{ old('status', $asset->status) }}" step="1">
+                            @if($errors->has('status'))
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('status') }}
+                                </div>
+                            @endif
+                            <span class="help-block">{{ trans('cruds.asset.fields.status_helper') }}</span>
+                        </div>
+                        <div class="form-group">
                             <button class="btn btn-danger" type="submit">
                                 {{ trans('global.save') }}
                             </button>

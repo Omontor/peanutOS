@@ -32,6 +32,12 @@ class StoreAssetRequest extends FormRequest
             'day_price' => [
                 'required',
             ],
+            'status' => [
+                'nullable',
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+            ],
         ];
     }
 }

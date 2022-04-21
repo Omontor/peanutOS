@@ -53,6 +53,9 @@
                                         {{ trans('cruds.asset.fields.week_price') }}
                                     </th>
                                     <th>
+                                        {{ trans('cruds.asset.fields.status') }}
+                                    </th>
+                                    <th>
                                         &nbsp;
                                     </th>
                                 </tr>
@@ -75,6 +78,9 @@
                                     <td>
                                     </td>
                                     <td>
+                                    </td>
+                                    <td>
+                                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                                     </td>
                                     <td>
                                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -137,6 +143,9 @@
                                         </td>
                                         <td>
                                             {{ $asset->week_price ?? '' }}
+                                        </td>
+                                        <td>
+                                            {{ $asset->status ?? '' }}
                                         </td>
                                         <td>
                                             @can('asset_show')

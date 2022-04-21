@@ -177,6 +177,11 @@
                                             {{ trans('cruds.approval.title') }}
                                         </a>
                                     @endcan
+                                    @can('asset_return_access')
+                                        <a class="dropdown-item ml-3" href="{{ route('frontend.asset-returns.index') }}">
+                                            {{ trans('cruds.assetReturn.title') }}
+                                        </a>
+                                    @endcan
                                     @can('client_management_access')
                                         <a class="dropdown-item disabled" href="#">
                                             {{ trans('cruds.clientManagement.title') }}

@@ -111,6 +111,14 @@
                             {{ $asset->week_price }}
                         </td>
                     </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.asset.fields.status') }}
+                        </th>
+                        <td>
+                            {{ $asset->status }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">

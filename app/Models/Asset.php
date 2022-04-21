@@ -44,6 +44,7 @@ class Asset extends Model implements HasMedia
         'cost',
         'day_price',
         'week_price',
+        'status',
         'created_at',
         'updated_at',
         'deleted_at',

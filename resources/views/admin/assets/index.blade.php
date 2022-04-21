@@ -52,6 +52,9 @@
                         {{ trans('cruds.asset.fields.week_price') }}
                     </th>
                     <th>
+                        {{ trans('cruds.asset.fields.status') }}
+                    </th>
+                    <th>
                         &nbsp;
                     </th>
                 </tr>
@@ -74,6 +77,9 @@
                     <td>
                     </td>
                     <td>
+                    </td>
+                    <td>
+                        <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                     </td>
                     <td>
                         <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -149,6 +155,7 @@
 { data: 'cost', name: 'cost' },
 { data: 'day_price', name: 'day_price' },
 { data: 'week_price', name: 'week_price' },
+{ data: 'status', name: 'status' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,

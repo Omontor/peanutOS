@@ -17,6 +17,10 @@ class StoreRentRequest extends FormRequest
     public function rules()
     {
         return [
+            'title' => [
+                'string',
+                'nullable',
+            ],
             'client_id' => [
                 'required',
                 'integer',

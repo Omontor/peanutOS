@@ -213,6 +213,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('appointments/destroy', 'AppointmentController@massDestroy')->name('appointments.massDestroy');
     Route::resource('appointments', 'AppointmentController');
 
+    // Asset Return
+    Route::delete('asset-returns/destroy', 'AssetReturnController@massDestroy')->name('asset-returns.massDestroy');
+    Route::post('asset-returns/media', 'AssetReturnController@storeMedia')->name('asset-returns.storeMedia');
+    Route::post('asset-returns/ckmedia', 'AssetReturnController@storeCKEditorImages')->name('asset-returns.storeCKEditorImages');
+    Route::resource('asset-returns', 'AssetReturnController');
+
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
     Route::get('global-search', 'GlobalSearchController@search')->name('globalSearch');
     Route::get('messenger', 'MessengerController@index')->name('messenger.index');
@@ -440,6 +446,12 @@ Route::group(['as' => 'frontend.', 'namespace' => 'Frontend', 'middleware' => ['
     // Appointment
     Route::delete('appointments/destroy', 'AppointmentController@massDestroy')->name('appointments.massDestroy');
     Route::resource('appointments', 'AppointmentController');
+
+    // Asset Return
+    Route::delete('asset-returns/destroy', 'AssetReturnController@massDestroy')->name('asset-returns.massDestroy');
+    Route::post('asset-returns/media', 'AssetReturnController@storeMedia')->name('asset-returns.storeMedia');
+    Route::post('asset-returns/ckmedia', 'AssetReturnController@storeCKEditorImages')->name('asset-returns.storeCKEditorImages');
+    Route::resource('asset-returns', 'AssetReturnController');
 
     Route::get('frontend/profile', 'ProfileController@index')->name('profile.index');
     Route::post('frontend/profile', 'ProfileController@update')->name('profile.update');
