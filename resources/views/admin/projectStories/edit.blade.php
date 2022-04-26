@@ -22,6 +22,23 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.projectStory.fields.project_helper') }}</span>
             </div>
+
+            <div class="form-group">
+                <label class="required" for="project_categories_id">Categoría</label>
+                <select class="form-control" name="project_categories_id">
+                        
+                    @forelse($categories as $category)
+                        @if($projectStory->project_categories_id== $category->id)
+                            <option value="{{$category->id}}" selected>{{$category->name}}</option>
+                        @else
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endif
+                    @empty
+                    @endforelse
+                </select>
+               
+           
+            </div>
             <div class="form-group">
                 <label for="description">{{ trans('cruds.projectStory.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description', $projectStory->description) !!}</textarea>

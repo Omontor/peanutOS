@@ -8,6 +8,7 @@ use App\Http\Requests\MassDestroyProjectStoryRequest;
 use App\Http\Requests\StoreProjectStoryRequest;
 use App\Http\Requests\UpdateProjectStoryRequest;
 use App\Models\Project;
+use App\Models\ProjectCategory;
 use App\Models\ProjectStory;
 use Gate;
 use Illuminate\Http\Request;
@@ -32,8 +33,9 @@ class ProjectStoryController extends Controller
         abort_if(Gate::denies('project_story_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $projects = Project::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $categories=ProjectCategory::all();
 
-        return view('admin.projectStories.create', compact('projects'));
+        return view('admin.projectStories.create', compact('projects','categories'));
     }
 
     public function store(StoreProjectStoryRequest $request)
@@ -64,10 +66,11 @@ class ProjectStoryController extends Controller
         abort_if(Gate::denies('project_story_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $projects = Project::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
+        $categories=ProjectCategory::all();
 
         $projectStory->load('project');
 
-        return view('admin.projectStories.edit', compact('projectStory', 'projects'));
+        return view('admin.projectStories.edit', compact('projectStory', 'projects','categories'));
     }
 
     public function update(UpdateProjectStoryRequest $request, ProjectStory $projectStory)

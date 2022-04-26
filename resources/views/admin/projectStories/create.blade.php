@@ -22,6 +22,18 @@
                 <span class="help-block">{{ trans('cruds.projectStory.fields.project_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="project_categories_id">Categoría</label>
+                <select class="form-control" name="project_categories_id">
+                        <option value="">Selecciona tu categoría</option>
+                    @forelse($categories as $category)  
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @empty
+                    @endforelse
+                </select>
+               
+           
+            </div>
+            <div class="form-group">
                 <label for="description">{{ trans('cruds.projectStory.fields.description') }}</label>
                 <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description') !!}</textarea>
                 @if($errors->has('description'))

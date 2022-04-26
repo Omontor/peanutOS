@@ -31,4 +31,14 @@ class ProjectCategory extends Model
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public function projects()
+    {
+        return $this->hasMany(ProjectStory::class, 'project_categories_id','id');
+    }
+
+    public function ultimo()
+    {
+        return $this->hasMany(ProjectStory::class, 'project_categories_id','id')->latest()->take(1);
+    }
 }

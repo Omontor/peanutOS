@@ -39,6 +39,7 @@ class ProjectStory extends Model implements HasMedia
         'created_at',
         'updated_at',
         'deleted_at',
+        'project_categories_id',
     ];
 
     public function registerMediaConversions(Media $media = null): void
@@ -91,5 +92,10 @@ class ProjectStory extends Model implements HasMedia
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(ProjectCategory::class, 'project_categories_id');
     }
 }
