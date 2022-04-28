@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Models\BasicData;
 use App\Models\ProjectStory;
 use App\Models\ProjectCategory;
+use App\Models\Client;
 
 class HomeController
 {
@@ -19,5 +20,12 @@ class HomeController
         $categoria5=ProjectCategory::find(5);
         $categoria6=ProjectCategory::find(6);
         return view('frontend.inicio',compact('categoria1','categoria2','categoria3','categoria4','categoria5','categoria6'));
+    }
+
+    public function about()
+    {
+        $categorias=ProjectCategory::all();
+        $clientes=Client::all();
+        return view('frontend.nosotros',compact('categorias','clientes'));
     }
 }

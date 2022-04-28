@@ -4,8 +4,8 @@
     </div>
     <div class="menu-links">
         <ul>
-            <li><a href="template/index.html">Inicio</a></li>
-            <li><a href="template/about.html">Nosotros</a></li>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="{{route('nosotros')}}">Nosotros</a></li>
             <li><a href="template/work.html">Proyectos</a></li>
             <li><a href="template/contact.html">Contacto</a></li>
         </ul>

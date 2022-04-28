@@ -1,6 +1,9 @@
 <?php
 
 Route::get('/', 'frontend\HomeController@index');
+Route::get('/nosotros', 'frontend\HomeController@about')->name('nosotros');
+
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin']], function () {
