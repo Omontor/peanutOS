@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
+use App\Models\BasicData;
 use App\Models\ProjectStory;
 use App\Models\ProjectCategory;
 

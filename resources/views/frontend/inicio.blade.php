@@ -235,21 +235,22 @@
     <div class="row">
         <div class="col">
             <div class="lg-text">
-                <span>MARCAS MÁS RECURRENTES</span><br>
-                <span>EN NUESTROS TRABAJOS</span><br>
+                <span>NUESTROS</span><br>
+                <span>CLIENTES</span><br>
                 </div>
             <div class="normal-text">
-                <p>Te mostramos algunas de las marcas con las que hemos trabajado.<br> Estamos seguros que has visto nuestro trabajo con ellas.</p>
+                <p>Algunas marcas y empresas con las que<br>hemos tenido la oportunidad de colaborar.</p>
             </div>
             <div class="clients-logos">
-                <div class="logo-holder"><img src="template/images/client1.png" alt=""></div>
-                <div class="logo-holder"><img src="template/images/client2.png" alt=""></div>
-                <div class="logo-holder"><img src="template/images/client3.png" alt=""></div>
-                <div class="logo-holder"><img src="template/images/client4.png" alt=""></div>
-                <div class="logo-holder"><img src="template/images/client5.png" alt=""></div>
-                <div class="logo-holder"><img src="template/images/client6.png" alt=""></div>
-                <div class="logo-holder"><img src="template/images/client7.png" alt=""></div>
-                <div class="logo-holder"><img src="template/images/client8.png" alt=""></div>
+                <div class="logo-holder"><img src="template/images/brand1.png" alt=""></div>
+                <div class="logo-holder"><img src="template/images/brand2.png" alt=""></div>
+                <div class="logo-holder"><img src="template/images/brand3.png" alt=""></div>
+                <div class="logo-holder"><img src="template/images/company2.png" alt=""></div>
+                <div class="logo-holder"><img src="template/images/brand4.png" alt=""></div>
+                <div class="logo-holder"><img src="template/images/company1.png" alt=""></div>
+               
+                <div class="logo-holder"><img src="template/images/company3.png" alt=""></div>
+                <div class="logo-holder"><img src="template/images/company4.png" alt=""></div>
             </div>
         </div>
     </div>
