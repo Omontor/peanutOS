@@ -28,4 +28,10 @@ class HomeController
         $clientes=Client::all();
         return view('frontend.nosotros',compact('categorias','clientes'));
     }
+
+    public function contact()
+    {
+        $datos=BasicData::first()->take(1)->get();
+        return view('frontend.contact', compact('datos'));
+    }
 }

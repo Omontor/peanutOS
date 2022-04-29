@@ -1,7 +1,6 @@
 @extends('layouts.mifront')
 @section('content')
 
-
 <div class="menu-toggle">
     <div class="icon"></div>
 </div>
@@ -76,7 +75,6 @@
         </div>
     </div>
 </div>
-
 
 @include('partials.footer')
 @endsection

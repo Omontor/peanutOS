@@ -7,7 +7,7 @@
             <li><a href="/">Inicio</a></li>
             <li><a href="{{route('nosotros')}}">Nosotros</a></li>
             <li><a href="template/work.html">Proyectos</a></li>
-            <li><a href="template/contact.html">Contacto</a></li>
+            <li><a href="{{route('contacto')}}">Contacto</a></li>
         </ul>
     </div>
     <div class="social-media">

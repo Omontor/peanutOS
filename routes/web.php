@@ -2,6 +2,7 @@
 
 Route::get('/', 'frontend\HomeController@index');
 Route::get('/nosotros', 'frontend\HomeController@about')->name('nosotros');
+Route::get('/contacto', 'frontend\HomeController@contact')->name('contacto');
 
 
 Auth::routes();
